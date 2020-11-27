@@ -1,0 +1,128 @@
+body {
+  max-width: 100vw;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+  background-color: lightgray;
+  /* display: flex;
+  align-items: center;
+  justify-content: space-between; */
+}
+
+.h1 {
+  margin: 20px 0 40px;
+}
+.h2 {
+  margin: 30px 0 56px;
+}
+
+.alert {
+  background-color: #f5f5f5;
+  border-radius: 7px;
+  padding: 25px 15px;
+  margin: 60px 0;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 1.5;
+  position: relative;
+}
+
+.section__left {
+  display: inline-block;
+  width: 50%;
+  height: 90%;
+  /* background-color: red; */
+}
+.section__left .purmo__form__pdf {
+  width: 90%;
+  /* border: 1px solid black; */
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
+
+.purmo__form__radiogroup {
+  /* background-color: aquamarine; */
+  width: 35%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.app-content {
+  float: left;
+  width: 100%;
+  padding-bottom: 60px;
+  position: relative;
+}
+.app-left-context {
+  float: left;
+  width: 60%;
+  /* background-color: red; */
+  padding-bottom: 60px;
+}
+.app-right-context {
+  position: sticky;
+  top: 30px;
+  padding: 0 5rem;
+  float: right;
+  width: 40%;
+  /* background-color: red; */
+}
+
+.form-group {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.h3 {
+  margin-top: 56px;
+}
+
+@media (max-width: 900px) {
+  .section__left {
+    width: 100%;
+    padding: 0 5rem;
+    margin-bottom: 20px;
+  }
+  .section__left .purmo__form__pdf {
+    width: 100%;
+  }
+  .app-content {
+    float: left;
+    width: 100%;
+    /* background-color: rgb(255, 225, 225); */
+  }
+  .app-left-context {
+    float: left;
+    width: 100%;
+    /* background-color: red; */
+    padding-bottom: 60px;
+  }
+  .app-right-context {
+    position: sticky;
+    top: 30px;
+    padding: 0 5rem;
+    float: right;
+    width: 100%;
+  }
+}
+
+/* @media (min-width: 600px) {
+    .form-group .label {
+      position: absolute;
+      bottom: 0;
+      padding-left: 15px;
+      font-weight: normal;
+      height: 28px;
+      margin: 0;
+      overflow: hidden;
+    }
+  
+    .form-group .label + input,
+    .form-group .label + select {
+      margin-bottom: 35px;
+      margin-top: 10px;
+    }
+  } */
