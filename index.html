@@ -5,37 +5,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js" defer></script>
   <script src="./script.js" defer type="module"></script>
   <title>Purmo</title>
 </head>
 
 <body>
-  <section class="section__left">
-    <form class="purmo__form__pdf">
 
-      <div class="form-group">
-        <label for="itemcode">Item Code</label>
-        <input type="text" class="form-control" id="itemcode" name="itemcode" required>
-        <small id="itemcode" class="form-text text-muted">Enter correct item code</small>
-      </div>
+  <form class="purmo__pdf--form">
+    <h1>PDF-fetcher</h1>
+    <div class="row">
+      <div class="col-md-12">
 
-      <div class="purmo__form__radiogroup form-group">
-        <div class="custom-control custom-radio">
-          <input type="radio" id="swedish" name="language" class="custom-control-input" value="sv-SE" checked>
-          <label class="custom-control-label" for="swedish">Swedish</label>
+        <div class="purmo__pdf--input-field">
+          <input type="text" class="itemcode-field" name="itemcode" required>
+          <label for="itemcode" class="itemcode-label">Item code</label>
+        </div>
+        <small id="validation-text" class="invalid-feedback d-none">Please provide a valid item code</small>
+
+        <div class="purmo__pdf--radio-group ">
+          <div class="custom-control custom-radio">
+            <input type="radio" id="swedish" name="language" class="custom-control-input" value="sv-SE" checked>
+            <label class="custom-control-label" for="swedish">Swedish</label>
+          </div>
+
+          <div class="custom-control custom-radio">
+            <input type="radio" id="english" name="language" class="custom-control-input" value="en">
+            <label class="custom-control-label" for="english">English</label>
+          </div>
         </div>
 
-        <div class="custom-control custom-radio">
-          <input type="radio" id="english" name="language" class="custom-control-input" value="en">
-          <label class="custom-control-label" for="english">English</label>
+        <div class="purmo__pdf--submit-button">
+          <button>Get PDF</button>
         </div>
-      </div>
+        <div class="form-group">
+          <a id="download-pdf-btn" href="#" target="_blank" class="btn btn-primary d-none" role="button">Download</a>
+        </div>
 
-      <button type="submit" class="btn btn-secondary">Get PDF</button>
-    </form>
-  </section>
+      </div>
+    </div>
+  </form>
 
   <div class="app-right-context">
 
@@ -126,8 +137,8 @@
     </div>
 
     <select name="site" id="site" class="form-control form-control-lg">
-      <option value="/en/"> English</option>
-      <option value="/de/">Germany</option>
+      <option value="/en/">Swedish</option>
+      <option value="/de/">English</option>
     </select>
     <div class="alert"> <span class="pictogram center"><i class="icon-bulb"></i></span>
       <p>

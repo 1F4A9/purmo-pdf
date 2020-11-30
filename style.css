@@ -5,19 +5,95 @@ body {
   margin-left: auto;
   margin-right: auto;
   padding-top: 20px;
-  background-color: lightgray;
+  font-family: "UniNeueRegular", Helvetica, Verdana, Tahoma, sans-serif;
+  /* background-color: lightgray; */
   /* display: flex;
   align-items: center;
   justify-content: space-between; */
 }
-
-.h1 {
-  margin: 20px 0 40px;
+.purmo__pdf--form {
+  width: 40%;
+  padding: 0 2rem;
+  display: inline-block;
+  /* background-color: red; */
 }
-.h2 {
-  margin: 30px 0 56px;
+.purmo__pdf--input-field {
+  position: relative;
 }
-
+.purmo__pdf--input-field .itemcode-field {
+  width: 100%;
+  z-index: 1;
+  border: none;
+  border: 1px solid #cfd6d7;
+  background-color: transparent;
+  color: #00292e;
+  padding: 19px 20px 14px 20px;
+  font-size: 20px;
+  outline: none;
+}
+.purmo__pdf--input-field .itemcode-label {
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  z-index: 2;
+  font-size: 20px;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  color: #00292e;
+}
+.purmo__pdf--input-field .itemcode-field:focus + .itemcode-label,
+.purmo__pdf--input-field .itemcode-field:valid + .itemcode-label {
+  outline: none;
+  border: none;
+  top: -12px;
+  background-color: #f5f5f5;
+  z-index: 10;
+  padding: 2px 5px;
+  -webkit-transform: none;
+  transform: none;
+  font-size: 14px;
+}
+.purmo__pdf--radio-group {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-evenly;
+  width: 200px;
+}
+.purmo__pdf--radio-group input:checked ~ .custom-control-label::before {
+  color: #fff;
+  border-color: #00292e;
+  background-color: #00292e;
+}
+.purmo__pdf--submit-button button {
+  margin-top: 25px;
+  color: #fff;
+  font-weight: bold;
+  background-color: #00292e;
+  border: 1px solid #00292e;
+  padding: 10px 20px 10px 20px;
+  font-size: 20px;
+  min-width: 150px;
+  text-decoration: none;
+  position: relative;
+  text-align: left;
+  display: inline-block;
+  cursor: pointer;
+}
+.purmo__pdf--submit-button button:hover {
+  border: 1px solid #ff8e2e;
+  background-color: #ff8e2e;
+}
+.purmo__pdf--submit-button button::after {
+  content: "\f105";
+  font-family: "FontAwesome";
+  color: #fff;
+  position: absolute;
+  right: 15px;
+  font-size: 20px;
+}
 .alert {
   background-color: #f5f5f5;
   border-radius: 7px;
@@ -28,28 +104,6 @@ body {
   line-height: 1.5;
   position: relative;
 }
-
-.section__left {
-  display: inline-block;
-  width: 50%;
-  height: 90%;
-  /* background-color: red; */
-}
-.section__left .purmo__form__pdf {
-  width: 90%;
-  /* border: 1px solid black; */
-  padding: 10px;
-  border-radius: 10px;
-  background-color: #f5f5f5;
-}
-
-.purmo__form__radiogroup {
-  /* background-color: aquamarine; */
-  width: 35%;
-  display: flex;
-  justify-content: space-between;
-}
-
 .app-content {
   float: left;
   width: 100%;
@@ -59,7 +113,6 @@ body {
 .app-left-context {
   float: left;
   width: 60%;
-  /* background-color: red; */
   padding-bottom: 60px;
 }
 .app-right-context {
@@ -68,61 +121,30 @@ body {
   padding: 0 5rem;
   float: right;
   width: 40%;
-  /* background-color: red; */
 }
-
 .form-group {
   margin-bottom: 15px;
   position: relative;
 }
-
-.h3 {
-  margin-top: 56px;
-}
-
 @media (max-width: 900px) {
-  .section__left {
+  .purmo__pdf--form {
     width: 100%;
-    padding: 0 5rem;
-    margin-bottom: 20px;
-  }
-  .section__left .purmo__form__pdf {
-    width: 100%;
+    margin: 30px 0px;
   }
   .app-content {
     float: left;
     width: 100%;
-    /* background-color: rgb(255, 225, 225); */
   }
   .app-left-context {
     float: left;
     width: 100%;
-    /* background-color: red; */
     padding-bottom: 60px;
   }
   .app-right-context {
     position: sticky;
     top: 30px;
-    padding: 0 5rem;
+    padding: 0 2rem;
     float: right;
     width: 100%;
   }
 }
-
-/* @media (min-width: 600px) {
-    .form-group .label {
-      position: absolute;
-      bottom: 0;
-      padding-left: 15px;
-      font-weight: normal;
-      height: 28px;
-      margin: 0;
-      overflow: hidden;
-    }
-  
-    .form-group .label + input,
-    .form-group .label + select {
-      margin-bottom: 35px;
-      margin-top: 10px;
-    }
-  } */
